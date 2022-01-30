@@ -24,11 +24,11 @@ def import_data_to_db(reader, email):
         if(row[0] != None and row[1] != None and row[2] != None and row[3] != None and row[4] != None and row[5] != None):
             created = Diagnosis.objects.create(
                 category_code=row[0],
-                category_title=row[1],
-                diagnosis_code=row[2],
-                full_code=row[3],
-                abbreviated_description=row[4],
-                full_description=row[5],
+                category_title=row[5],
+                diagnosis_code=row[1],
+                full_code=row[2],
+                abbreviated_description=row[3],
+                full_description=row[4],
             )
 
     send_email.delay(email)
