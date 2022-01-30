@@ -23,6 +23,12 @@ Navigate to the directory
   cd mpharma-th-python
 ```
 
+Create .env file from .env.example
+
+```bash
+  cp .env.example .env
+```
+
 Build Appliccation ⚙️:
 
 ```bash
