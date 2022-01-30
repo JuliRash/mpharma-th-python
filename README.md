@@ -34,3 +34,10 @@ Build Appliccation ⚙️:
 ```bash
   docker-compose up
 ```
+
+Testing
+make sure you have built the application
+
+```bash
+  docker-compose run django python manage.py test
+```
