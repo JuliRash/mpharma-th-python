@@ -38,9 +38,6 @@ class UploadViewSet(viewsets.ViewSet):
     serializer_class = UploadSerializer
     parser_classes = (MultiPartParser, FormParser, JSONParser)
 
-    def list(self, request):
-        return Response("GET API")
-
     def create(self, request):
         serializer = UploadSerializer(data=request.data)
         if serializer.is_valid():
@@ -52,7 +49,8 @@ class UploadViewSet(viewsets.ViewSet):
             reader = pd.read_csv(file_uploaded, header=None)
             import_data_to_db.delay(reader.to_json(), email)
 
-            message = "data from imported successfully"
+            message = "data import processing a confirmation email would be sent to " + \
+                email + " after completion"
             return Response({'status': 'success', 'message': message}, status=status.HTTP_200_OK)
         else:
             return Response({'status': 'error', 'data': serializer.errors}, status=status.HTTP_400_BAD_REQUEST)

@@ -28,7 +28,6 @@ diagnosis_detail = DiagnosisViewSet.as_view(
 
 upload_view = UploadViewSet.as_view(
     {
-        'get': 'list',
         'post': 'create'
     }
 )
@@ -37,5 +36,5 @@ urlpatterns = [
     path('', api_root, name='apiroot'),
     path('diagnosis', diagnosis_list, name='diagnosis'),
     path('diagnosis/<str:pk>', diagnosis_detail, name='detail'),
-    path('diagnosis/csv-upload', upload_view, name='upload_csv')
+    path('csv-upload', upload_view, name='upload_csv')
 ]
