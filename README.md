@@ -41,3 +41,7 @@ make sure you have built the application
 ```bash
   docker-compose run django python manage.py test
 ```
+
+[Documentation](https://documenter.getpostman.com/view/6597817/UVeDrS8G)
+
+[Postman Collection](https://www.getpostman.com/collections/960c9456918f7eb7fc59)
